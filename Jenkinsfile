@@ -1,5 +1,4 @@
 pipeline {
-	def host = 'localhost'
 	
     agent any
     stages {
@@ -11,7 +10,7 @@ pipeline {
 	    
 	    stage('deploy war-file to tomcat'){
 	        steps {
-	            sh "curl -v -u war-deployer:Welcome1! -T ./target/java-jenkins-example.war 'http://${host}:8080/manager/text/deploy?path=${context}&update=true'"
+	            sh "curl -v -u war-deployer:Welcome1! -T ./target/java-jenkins-example.war 'http://localhost:8080/manager/text/deploy?path=${context}&update=true'"
 	        }
 	    }
     }
