@@ -10,7 +10,7 @@ pipeline {
 	    
 	    stage('deploy war-file to tomcat'){
 	        steps {
-	            sh "curl -v -u war-deployer:Welcome1! -T ./target/java-jenkins-example.war 'http://localhost:8080/manager/text/deploy?path=\"/jenkins-java-example\"&update=true'"
+	            sh "curl -v -u war-deployer:Welcome1! -T ./target/jenkins-java-example.war 'http://localhost:8080/manager/text/deploy?path=\"/jenkins-java-example\"&update=true'"
 	        }
 	    }
     }
