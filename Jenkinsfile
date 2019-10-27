@@ -1,11 +1,10 @@
 pipeline {
     agent any
-    stages{
-        stage('Stage 1'){
+    stages {
+        stage('build war-file'){
 	        steps {
-	            echo 'Hello World!'
+	            sh 'mvn war:war'
 	        }
-	
 	    }
     }
 }
