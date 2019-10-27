@@ -34,6 +34,7 @@ public class HelloWorldServlet extends HttpServlet {
 		PrintWriter responseWriter = response.getWriter();
 		responseWriter.write("Served at:");
 		responseWriter.write(request.getContextPath());
+		responseWriter.write(" - Hello World!");
 		responseWriter.flush();
 		responseWriter.close();
 	}
