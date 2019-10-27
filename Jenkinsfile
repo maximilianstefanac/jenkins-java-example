@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('build war-file'){
 	        steps {
-	            sh 'mvn war:war'
+	            sh '/usr/bin/apache-maven-3/bin/mvn war:war'
 	        }
 	    }
     }
