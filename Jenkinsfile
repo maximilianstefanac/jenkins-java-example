@@ -11,8 +11,12 @@ pipeline {
 	    }
 	    
 	    stage('deploy war-file to tomcat'){
+	    	environment {
+	    	    TOMCAT_USERNAME = credentials('tomcat-username')
+	    	    TOMCAT_PASSWORD = credentials('tomcat-password')
+	    	}
 	        steps {
-	            sh "curl -v -u war-deployer:Welcome1! -T ./target/jenkins-java-example.war 'http://localhost:8080/manager/text/deploy?path=/jenkins-java-example&update=true'"
+	            sh "curl -v -u ${TOMCAT_USERNAME}:${TOMCAT_PASSWORD} -T ./target/jenkins-java-example.war 'http://localhost:8080/manager/text/deploy?path=/jenkins-java-example&update=true'"
 	        }
 	    }
     }
